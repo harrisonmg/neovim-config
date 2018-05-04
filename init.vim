@@ -76,7 +76,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -95,9 +94,6 @@ set fillchars+=vert:\
 
 " FZF
 nnoremap <c-p> :GFiles<cr>
-
-" Better Whitespace
-hi! link ExtraWhitespace ErrorMsg
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
