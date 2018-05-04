@@ -126,3 +126,4 @@ let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 inoremap <C-c> <Esc><Esc>
+let g:ale_fixers = { 'python': ['autopep8'] }
