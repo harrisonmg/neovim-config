@@ -93,7 +93,7 @@ hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
 " FZF
-nnoremap <c-p> :Files<cr>
+nnoremap <c-p> :GFiles<cr>
 
 " Better Whitespace
 hi! link ExtraWhitespace ErrorMsg
