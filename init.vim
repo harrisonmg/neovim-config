@@ -74,7 +74,7 @@ command! E Explore
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'easymotion/vim-easymotion'
