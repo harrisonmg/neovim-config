@@ -81,14 +81,15 @@ Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
+Plug 'vimjas/vim-python-pep8-indent'
 call plug#end()
 
 " Seoul256 colorscheme
-colo seoul256
 hi normal guibg=NONE ctermbg=NONE
-set background=dark
-hi LineNr ctermbg=NONE
 let g:seoul256_background = 236
+set background=dark
+colo seoul256
+hi LineNr ctermbg=NONE
 hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
