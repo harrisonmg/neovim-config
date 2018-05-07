@@ -5,10 +5,10 @@ sudo apt-get install neovim
 
 # perform initial unpack
 mkdir -p ~/.config/nvim/
-./unpack
+./unpack.sh
 
 # install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # make alias
