@@ -10,6 +10,9 @@ set shiftwidth=4
 set tabstop=4
 set cursorline
 
+" Paste mode hotkey
+set pastetoggle=<F2>
+
 " Paste yank in insert mode
 imap <c-r> <c-r>"
 
