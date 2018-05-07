@@ -1,5 +1,4 @@
 " General config
-set nocompatible
 set noshowmode
 set number
 set ruler
