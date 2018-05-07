@@ -41,9 +41,6 @@ let g:netrw_liststyle = 3
 " Enable XML highlighting for .launch files
 autocmd BufEnter *.launch setlocal syntax=xml
 
-" Add helptags
-helptags ~/.vim/doc
-
 " Faster tab switching
 noremap <c-l> gt
 noremap <c-h> gT
