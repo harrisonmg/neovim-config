@@ -93,6 +93,7 @@ set fillchars+=vert:\
 
 " FZF
 nnoremap <c-p> :GFiles<cr>
+nnoremap <c-n> :Files<cr>
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
