@@ -5,9 +5,11 @@ set ruler
 set ignorecase
 set encoding=utf8
 set expandtab
-set shiftwidth=4
 set tabstop=4
 set cursorline
+
+" C++ file two-space indents
+au FileType cpp,hpp set tabstop=2
 
 " Paste mode hotkey
 set pastetoggle=<F2>
@@ -35,7 +37,7 @@ nnoremap // :let @/ = ""<cr>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Warn on file change
-:au FileChangedShell * echo "Warning: File changed on disk"
+au FileChangedShell * echo "Warning: File changed on disk"
 
 " Set default explorer view
 let g:netrw_liststyle = 3
