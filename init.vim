@@ -5,6 +5,7 @@ set ruler
 set ignorecase
 set encoding=utf8
 set expandtab
+set shiftwidth=0
 set tabstop=4
 set cursorline
 
