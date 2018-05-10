@@ -99,6 +99,7 @@ nnoremap <c-n> :Files<cr>
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 map f <Plug>(easymotion-overwin-f)
+vmap f <Plug>(easymotion-bd-f)
 imap <c-f> <c-o>f
 hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
