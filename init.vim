@@ -9,8 +9,12 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
-" C++ file two-space indents
-au FileType cpp,hpp set tabstop=2
+" Select all
+nmap <c-a> ggVG
+
+" C++ or CMakeLists file two-space indents
+au FileType cpp,hpp setlocal tabstop=2
+au BufEnter CMakeLists.txt setlocal tabstop=2
 
 " Paste mode hotkey
 set pastetoggle=<F2>
@@ -44,7 +48,7 @@ au FileChangedShell * echo "Warning: File changed on disk"
 let g:netrw_liststyle = 3
 
 " Enable XML highlighting for .launch files
-autocmd BufEnter *.launch setlocal syntax=xml
+au BufEnter *.launch setlocal syntax=xml
 
 " Faster tab switching
 noremap <c-l> gt
@@ -60,7 +64,7 @@ imap <c-k> <Up>
 imap <c-l> <Right>
 
 " Fix YAML autospacing
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Some fun command maps
 command! W w
