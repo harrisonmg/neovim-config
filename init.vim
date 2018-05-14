@@ -90,6 +90,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'vimjas/vim-python-pep8-indent'
+Plug 'brooth/far.vim'
 call plug#end()
 
 " Seoul256 colorscheme
