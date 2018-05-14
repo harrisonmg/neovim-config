@@ -9,6 +9,9 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
+" Disable automatic comment continuation
+au FileType * setlocal fo-=c fo-=r fo-=o
+
 " Select all
 nmap <c-a> ggVG
 
@@ -131,4 +134,3 @@ let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 inoremap <C-c> <Esc><Esc>
-let g:ale_fixers = { 'python': ['autopep8'] }
