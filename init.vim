@@ -9,9 +9,6 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
-" Quit buffer
-nmap <c-q> :q<CR>
-
 " Disable automatic comment continuation
 au BufNewFile,BufRead * setlocal fo-=c fo-=r fo-=o
 
