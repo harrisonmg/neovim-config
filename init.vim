@@ -9,8 +9,11 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
+" Quit buffer
+nmap <c-q> :q<CR>
+
 " Disable automatic comment continuation
-au FileType * setlocal fo-=c fo-=r fo-=o
+au BufNewFile,BufRead * setlocal fo-=c fo-=r fo-=o
 
 " Select all
 nmap <c-a> ggVG
@@ -135,3 +138,8 @@ let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 inoremap <C-c> <Esc><Esc>
+
+" Far
+nmap <c-f> :Farp<CR>
+vmap <c-f> :Farp<CR>
+au FileType far_vim map <buffer> <c-f> :Fardo<CR>:q<CR>
