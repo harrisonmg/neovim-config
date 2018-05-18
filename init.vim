@@ -70,15 +70,15 @@ imap <c-l> <Right>
 au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Some fun command maps
-command! W w
-command! Q q
-command! Wq wq
-command! WQ wq
-command! V tabe ~/.config/nvim/init.vim
-command! S source ~/.config/nvim/init.vim
-command! WS w | S
-command! Ws w | S
-command! E Explore
+com! W w
+com! Q q
+com! Wq wq
+com! WQ wq
+com! V tabe ~/.config/nvim/init.vim
+com! S source ~/.config/nvim/init.vim
+com! WS w | S
+com! Ws w | S
+com! E Explore
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
@@ -103,7 +103,12 @@ hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
 " FZF
-nnoremap <c-p> :GFiles<cr>
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+command! -bang -nargs=? -complete=dir GFiles
+  \ call fzf#vim#files(systemlist('git rev-parse --show-toplevel')[0], fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+nnoremap <c-p> :GFiles --exclude .pyc<cr>
 nnoremap <c-n> :Files<cr>
 
 " EasyMotion
