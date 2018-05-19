@@ -9,15 +9,18 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
-" Disable automatic comment continuation
-au BufNewFile,BufRead * setlocal fo-=c fo-=r fo-=o
+" Add C++ line length guide
+au FileType cpp,hpp setl cc=120
+
+" Attempt to disable automatic comment continuation
+au BufNewFile,BufRead * setl fo-=c fo-=r fo-=o
 
 " Select all
 nmap <c-a> ggVG
 
 " C++ or CMakeLists file two-space indents
-au FileType cpp,hpp setlocal tabstop=2
-au BufEnter CMakeLists.txt setlocal tabstop=2
+au FileType cpp,hpp setl tabstop=2
+au BufEnter CMakeLists.txt setl tabstop=2
 
 " Paste mode hotkey
 set pastetoggle=<F2>
@@ -51,7 +54,7 @@ au FileChangedShell * echo "Warning: File changed on disk"
 let g:netrw_liststyle = 3
 
 " Enable XML highlighting for .launch files
-au BufEnter *.launch setlocal syntax=xml
+au BufEnter *.launch setl syntax=xml
 
 " Faster tab switching
 noremap <c-l> gt
@@ -67,7 +70,7 @@ imap <c-k> <Up>
 imap <c-l> <Right>
 
 " Fix YAML autospacing
-au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+au FileType yaml setl ts=2 sts=2 sw=2 expandtab
 
 " Some fun command maps
 com! W w
@@ -105,9 +108,7 @@ set fillchars+=vert:\
 " FZF
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 command! -bang -nargs=? -complete=dir GFiles
-  \ call fzf#vim#files(systemlist('git rev-parse --show-toplevel')[0], fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  \ call fzf#vim#files(systemlist('git rev-parse --show-toplevel')[0], <bang>0)
 nnoremap <c-p> :GFiles --exclude .pyc<cr>
 nnoremap <c-n> :Files<cr>
 
