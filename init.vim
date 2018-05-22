@@ -29,23 +29,23 @@ set pastetoggle=<F2>
 imap <c-r> <c-r>"
 
 " Yank to EOL, but not CR
-noremap Y v$hy
+nor Y v$hy
 
 " Insert newlines
-nnoremap <c-k> mxo<esc>`x
-nnoremap <c-j> mxO<esc>`x
+nn <c-k> mxo<esc>`x
+nn <c-j> mxO<esc>`x
 
 " Set persistent status line
 set laststatus=2
 
 " Allow searching of a visual selection with //
-vnoremap // y/\V<c-r>"<cr>
+vn // y/\V<c-r>"<cr>
 
 " Otherwise // clears the search
-nnoremap // :let @/ = ""<cr>
+nn // :let @/ = ""<cr>
 
 " Allow saving of files as sudo when I forget to start vim using sudo.
-cnoremap w!! w !sudo tee > /dev/null %
+cno w!! w !sudo tee > /dev/null %
 
 " Warn on file change
 au FileChangedShell * echo "Warning: File changed on disk"
@@ -57,8 +57,8 @@ let g:netrw_liststyle = 3
 au BufEnter *.launch setl syntax=xml
 
 " Faster tab switching
-noremap <c-l> gt
-noremap <c-h> gT
+nor <c-l> gt
+nor <c-h> gT
 
 " Faster split switching
 map <space> <c-w><c-w>
@@ -109,12 +109,13 @@ set fillchars+=vert:\
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#files(systemlist('git rev-parse --show-toplevel')[0], <bang>0)
-nnoremap <c-p> :GFiles --exclude .pyc<cr>
-nnoremap <c-n> :Files<cr>
+nn <c-p> :GFiles --exclude .pyc<cr>
+nn <c-n> :Files<cr>
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
+nor F f
 map f <Plug>(easymotion-overwin-f)
 vmap f <Plug>(easymotion-bd-f)
 imap <c-f> <c-o>f
@@ -140,7 +141,7 @@ endif
 let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
-inoremap <C-c> <Esc><Esc>
+ino <C-c> <Esc><Esc>
 
 " Far
 nmap <c-f> :Farp<CR>
