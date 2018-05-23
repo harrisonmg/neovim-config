@@ -69,8 +69,8 @@ imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
 
-" Fix YAML autospacing
-au FileType yaml setl ts=2 sts=2 sw=2 expandtab
+" Fix YAML and vim autospacing
+au FileType yaml,vim setl ts=2 sts=2 sw=2 expandtab
 
 " Some fun command maps
 com! W w
@@ -106,11 +106,18 @@ hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
 " FZF
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+fu GetGitDir()
+  let dir = systemlist('git rev-parse --show-toplevel')[0]
+  if dir =~? "^fatal: Not a git repository"
+    return '.'
+  else
+    return dir
+  endif
+endf
 command! -bang -nargs=? -complete=dir GFiles
-  \ call fzf#vim#files(systemlist('git rev-parse --show-toplevel')[0], <bang>0)
+  \ call fzf#vim#files(GetGitDir(), <bang>0)
 nn <c-p> :GFiles --exclude .pyc<cr>
-nn <c-n> :Files<cr>
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
