@@ -9,6 +9,10 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 
+" Add support for machine specific dotfile
+" By default this is machine.vim in the same dir as init.vim
+ru machine.vim
+
 " Add C++ line length guide
 au FileType cpp,hpp setl cc=120
 
@@ -78,6 +82,7 @@ com! Q q
 com! Wq wq
 com! WQ wq
 com! V tabe ~/.config/nvim/init.vim
+com! M tabe ~/.config/nvim/machine.vim
 com! S source ~/.config/nvim/init.vim
 com! WS w | S
 com! Ws w | S
@@ -106,7 +111,7 @@ hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
 " FZF
-fu GetGitDir()
+fu! GetGitDir()
   let dir = systemlist('git rev-parse --show-toplevel')[0]
   if dir =~? "^fatal: Not a git repository"
     return '.'

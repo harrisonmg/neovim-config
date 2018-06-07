@@ -11,6 +11,7 @@ rm fd_7.0.0_amd64.deb
 # perform initial unpack
 mkdir -p ~/.config/nvim/
 ./unpack.sh
+echo -e "\" Dotfile for machine specific configurations\n" >> ~/.config/nvim/machine.vim
 
 # install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
