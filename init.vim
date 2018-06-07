@@ -13,6 +13,13 @@ set cursorline
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
+" Show trailing whitepace and spaces before a tab:
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " Add C++ line length guide
 au FileType cpp,hpp setl cc=120
 
