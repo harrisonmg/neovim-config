@@ -14,11 +14,16 @@ set cursorline
 ru machine.vim
 
 " Show trailing whitepace and spaces before a tab:
+hi link ExtraWhitespace ErrorMsg
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Show tabs
+set list
+set listchars=tab:>-
 
 " Add C++ line length guide
 au FileType cpp,hpp setl cc=120
