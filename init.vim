@@ -41,8 +41,8 @@ au BufEnter CMakeLists.txt setl tabstop=2
 " Paste mode hotkey
 set pastetoggle=<F2>
 
-" Paste yank in insert mode
-imap <c-r> <c-r>"
+" Paste yank in insert and command mode
+map! <c-r> <c-r>"
 
 " Yank to EOL, but not CR
 nor Y v$hy
