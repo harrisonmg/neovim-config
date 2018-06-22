@@ -1,3 +1,6 @@
+#!/bin/bash
+set -o errexit
+
 # install neovim
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
@@ -14,6 +17,7 @@ mkdir -p ~/.config/nvim/
 echo -e "\" Dotfile for machine specific configurations\n" >> ~/.config/nvim/machine.vim
 
 # install vim-plug
+sudo apt-get install curl
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
