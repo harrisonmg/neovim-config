@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install neovim
 
 # install fd for fzf
-wget https://github.com/sharkdp/fd/releases/download/v7.0.0/fd_7.0.0_amd64.deb
+wget --no-check-certificate https://github.com/sharkdp/fd/releases/download/v7.0.0/fd_7.0.0_amd64.deb
 sudo dpkg -i fd_7.0.0_amd64.deb
 rm fd_7.0.0_amd64.deb
 
