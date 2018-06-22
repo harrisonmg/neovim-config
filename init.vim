@@ -21,6 +21,13 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Removes trailing spaces
+fu! RemoveTrailingWhitespace()
+  %s/\s*$//
+  ''
+endf
+com! TrimWhitespace call RemoveTrailingWhitespace()
+
 " Show tabs
 set list
 set listchars=tab:>-
@@ -131,7 +138,7 @@ fu! GetGitDir()
     return dir
   endif
 endf
-command! -bang -nargs=? -complete=dir GFiles
+com! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#files(GetGitDir(), <bang>0)
 nn <c-p> :GFiles --exclude .pyc<cr>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
