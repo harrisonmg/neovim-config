@@ -13,7 +13,10 @@ set cursorline
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
-" Show trailing whitepace and spaces before a tab:
+" Don't yank replaced text on visual paste
+vnoremap p "0p
+
+" Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
