@@ -118,6 +118,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'vimjas/vim-python-pep8-indent'
 Plug 'brooth/far.vim'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " Seoul256 colorscheme
@@ -178,3 +179,6 @@ ino <C-c> <Esc><Esc>
 nmap <c-f> :Farp<CR>
 vmap <c-f> :Farp<CR>
 au FileType far_vim map <buffer> <c-f> :Fardo<CR>:q<CR>
+
+" Highlighted Yank
+let g:highlightedyank_highlight_duration = 500
