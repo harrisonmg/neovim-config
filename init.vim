@@ -13,9 +13,6 @@ set cursorline
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
-" Don't yank replaced text on visual paste
-vnoremap p "0p
-
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
 match ExtraWhitespace /\s\+$/
@@ -37,9 +34,6 @@ set listchars=tab:>-
 
 " Add C++ line length guide
 au FileType cpp,hpp setl cc=120
-
-" Attempt to disable automatic comment continuation
-au BufNewFile,BufRead * setl fo-=c fo-=r fo-=o
 
 " Select all
 nmap <c-a> ggVG
