@@ -8,18 +8,22 @@ set expandtab
 set shiftwidth=0
 set tabstop=4
 set cursorline
+filetype plugin indent on
 
 " Add support for machine specific dotfile
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
+" Disable C/C++ one-line auto-comment
+au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f://
+
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+au BufWinLeave * call clearmatches()
 
 " Removes trailing spaces
 fu! RemoveTrailingWhitespace()
