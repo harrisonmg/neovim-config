@@ -59,6 +59,9 @@ nor Y v$hy
 nn <c-k> mxo<esc>`x
 nn <c-j> mxO<esc>`x
 
+" Split lines
+nn <s-k> mxi<cr><esc>`x
+
 " Set persistent status line
 set laststatus=2
 
