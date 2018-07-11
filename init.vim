@@ -81,7 +81,7 @@ au FileChangedShell * echo "Warning: File changed on disk"
 let g:netrw_liststyle = 3
 
 " Enable XML highlighting for .launch files
-au BufEnter *.launch setl syntax=xml
+au BufEnter *.launch,*.test setl syntax=xml
 
 " Faster tab switching
 nor <c-l> gt
