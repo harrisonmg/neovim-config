@@ -12,8 +12,6 @@ filetype plugin indent on
 
 " Add support for machine specific dotfile
 " By default this is machine.vim in the same dir as init.vim
-
-
 ru machine.vim
 
 " Disable C/C++ one-line auto-comment
@@ -183,6 +181,7 @@ ino <C-c> <Esc><Esc>
 
 " Far
 au FileType far_vim map <buffer> <c-f> :Fardo<cr>:q<cr>
+let g:far#auto_write_replaced_buffers = 0
 
 function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('============ FAR PROMPT ================')
@@ -228,7 +227,7 @@ fu! ActiveBuffers()
   return join(paths, ' ')
 endf
 
-function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
+function! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('============ FAR PROMPT ================')
 
   let pattern = input('Search in active buffers (pattern): ', '', 'customlist,far#FarSearchComplete')
@@ -252,11 +251,11 @@ function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
 endfunction
 
 command! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpABuf
-  \ call FarPromptBuffer(<count>,<line1>,<line2>,<f-args>)
+  \ call FarPromptActiveBuffers(<count>,<line1>,<line2>,<f-args>)
 "}}}
 
-nmap <c-s-f> :FarpABuf<cr>
-vmap <c-s-f> :FarpABuf<cr>
+nmap <c-b> :FarpABuf<cr>
+vmap <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
