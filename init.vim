@@ -12,6 +12,8 @@ filetype plugin indent on
 
 " Add support for machine specific dotfile
 " By default this is machine.vim in the same dir as init.vim
+
+
 ru machine.vim
 
 " Disable C/C++ one-line auto-comment
@@ -52,7 +54,7 @@ set pastetoggle=<F2>
 " Paste yank in insert and command mode
 map! <c-r> <c-r>"
 
-" Yank to EOL, but not CR
+" Yank to EOL, but not cr
 nor Y v$hy
 
 " Insert newlines
@@ -180,9 +182,81 @@ let g:ale_lint_on_insert_leave = 1
 ino <C-c> <Esc><Esc>
 
 " Far
-nmap <c-f> :Farp<CR>
-vmap <c-f> :Farp<CR>
-au FileType far_vim map <buffer> <c-f> :Fardo<CR>:q<CR>
+au FileType far_vim map <buffer> <c-f> :Fardo<cr>:q<cr>
+
+function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
+  call far#tools#log('============ FAR PROMPT ================')
+
+  let pattern = input('Search in buffer (pattern): ', '', 'customlist,far#FarSearchComplete')
+  call far#tools#log('>pattern: '.pattern)
+  if empty(pattern)
+    call far#tools#echo_err('No pattern')
+    return
+  endif
+
+  let replace_with = input('Replace with: ', '', 'customlist,far#FarReplaceComplete')
+  call far#tools#log('>replace_with: '.replace_with)
+
+  let far_params = {
+    \   'pattern': pattern,
+    \   'replace_with': replace_with,
+    \   'file_mask': '%',
+    \   'range': a:rngmode == -1? [-1,-1] : [a:rngline1, a:rngline2],
+    \   }
+
+  call far#find(far_params, a:000)
+endfunction
+
+command! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpBuf
+  \ call FarPromptBuffer(<count>,<line1>,<line2>,<f-args>)
+"}}}
+
+nmap <c-f> :FarpBuf<cr>
+vmap <c-f> :FarpBuf<cr>
+
+fu! ActiveBuffers()
+  redir => bufs
+  silent execute 'ls a'
+  redir END
+  let bufs = split(bufs)
+  let paths = []
+  for str in bufs
+    if match(str, '".*"') >= 0
+      let paths = add(paths, str[1:-2])
+    endif
+  endfor
+  return join(paths, ' ')
+endf
+
+function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
+  call far#tools#log('============ FAR PROMPT ================')
+
+  let pattern = input('Search in active buffers (pattern): ', '', 'customlist,far#FarSearchComplete')
+  call far#tools#log('>pattern: '.pattern)
+  if empty(pattern)
+    call far#tools#echo_err('No pattern')
+    return
+  endif
+
+  let replace_with = input('Replace with: ', '', 'customlist,far#FarReplaceComplete')
+  call far#tools#log('>replace_with: '.replace_with)
+
+  let far_params = {
+    \   'pattern': pattern,
+    \   'replace_with': replace_with,
+    \   'file_mask': ActiveBuffers(),
+    \   'range': a:rngmode == -1? [-1,-1] : [a:rngline1, a:rngline2],
+    \   }
+
+  call far#find(far_params, a:000)
+endfunction
+
+command! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpABuf
+  \ call FarPromptBuffer(<count>,<line1>,<line2>,<f-args>)
+"}}}
+
+nmap <c-s-f> :FarpABuf<cr>
+vmap <c-s-f> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
