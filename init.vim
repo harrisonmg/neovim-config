@@ -167,6 +167,9 @@ let g:lightline.tab_component_function = {
       \ 'tabnum': '' }
 
 " NERD Commenter
+let g:NERDCreateDefaultMappings = 0
+let g:NERDCustomDelimiters = { 'c': { 'left': '//' }, 'c++': { 'left': '//' } }
+let g:NERDRemoveAltComs = 0
 if has('win32')
     map <c-/> <plug>NERDCommenterToggle
 else
