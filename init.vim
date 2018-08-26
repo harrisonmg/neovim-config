@@ -14,8 +14,8 @@ filetype plugin indent on
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
-" Disable C/C++ one-line auto-comment
-au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f://
+" Disable C/C++ one-line auto-comment and set tabstop
+au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f:// tabstop=2
 
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
