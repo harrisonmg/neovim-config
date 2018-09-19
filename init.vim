@@ -14,8 +14,11 @@ filetype plugin indent on
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
-" Don't copy on paste
-xnoremap p "_dP
+" Don't yank on paste or replace
+xn p "_dP
+xn c "_c
+nn c "_c
+nn C "_C
 
 " Disable C/C++ one-line auto-comment and set tabstop
 au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f:// tabstop=2
