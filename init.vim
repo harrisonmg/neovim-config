@@ -46,7 +46,7 @@ set listchars=tab:>-
 au FileType cpp,hpp setl cc=120
 
 " Select all
-nmap <c-a> ggVG
+nm <c-a> ggVG
 
 " C++ or CMakeLists file two-space indents
 au FileType cpp,hpp setl tabstop=2
@@ -97,10 +97,10 @@ nor <c-h> gT
 map <space> <c-w><c-w>
 
 " Enable insert mode arrows
-imap <c-h> <Left>
-imap <c-j> <Down>
-imap <c-k> <Up>
-imap <c-l> <Right>
+im <c-h> <Left>
+im <c-j> <Down>
+im <c-k> <Up>
+im <c-l> <Right>
 
 " Fix YAML and vim autospacing
 au FileType yaml,vim setl ts=2 sts=2 sw=2 expandtab
@@ -159,8 +159,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nor F f
 map f <Plug>(easymotion-overwin-f)
-vmap f <Plug>(easymotion-bd-f)
-imap <c-f> <c-o>f
+vm f <Plug>(easymotion-bd-f)
+im <c-f> <c-o>f
 hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
@@ -199,7 +199,7 @@ ino <C-c> <Esc><Esc>
 au FileType far_vim map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 
-function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
+fu! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('============ FAR PROMPT ================')
 
   let pattern = input('Search in buffer (pattern): ', '', 'customlist,far#FarSearchComplete')
@@ -220,14 +220,14 @@ function! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
     \   }
 
   call far#find(far_params, a:000)
-endfunction
+endf
 
-command! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpBuf
+com! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpBuf
   \ call FarPromptBuffer(<count>,<line1>,<line2>,<f-args>)
 "}}}
 
-nmap <c-f> :FarpBuf<cr>
-vmap <c-f> :FarpBuf<cr>
+nm <c-f> :FarpBuf<cr>
+vm <c-f> :FarpBuf<cr>
 
 fu! ActiveBuffers()
   redir => bufs
@@ -243,7 +243,7 @@ fu! ActiveBuffers()
   return join(paths, ' ')
 endf
 
-function! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "{{{
+fu! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('============ FAR PROMPT ================')
 
   let pattern = input('Search in active buffers (pattern): ', '', 'customlist,far#FarSearchComplete')
@@ -264,14 +264,14 @@ function! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "
     \   }
 
   call far#find(far_params, a:000)
-endfunction
+endf
 
-command! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpABuf
+com! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpABuf
   \ call FarPromptActiveBuffers(<count>,<line1>,<line2>,<f-args>)
 "}}}
 
-nmap <c-b> :FarpABuf<cr>
-vmap <c-b> :FarpABuf<cr>
+nm <c-b> :FarpABuf<cr>
+vm <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
