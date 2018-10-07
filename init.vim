@@ -178,11 +178,13 @@ let g:NERDRemoveAltComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDRemoveExtraSpaces = 1
 let g:NERDCustomDelimiters = { 'c': { 'left': '//' }, 'cpp': { 'left': '//' },
-                             \ 'h': { 'left': '//' }, 'hpp': { 'left': '//' }}
+                             \ 'h': { 'left': '//' }, 'hpp': { 'left': '//' },
+                             \ 'asm': { 'left': '#' }}
 let g:NERDAltDelims_c = 1
 let g:NERDAltDelims_h = 1
 let g:NERDAltDelims_cpp = 1
 let g:NERDAltDelims_hpp = 1
+let g:NERDAltDelims_asm = 1
 if has('win32')
     map <c-/> <plug>NERDCommenterToggle
 else
