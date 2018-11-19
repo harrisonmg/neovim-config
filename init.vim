@@ -14,6 +14,9 @@ filetype plugin indent on
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
+" Don't unindent on #
+set cinkeys-=0#
+
 " Don't yank on paste, replace, x or s
 xn p "_dP
 xn c "_c
