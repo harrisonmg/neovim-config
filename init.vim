@@ -120,7 +120,7 @@ com! M tabe ~/.config/nvim/machine.vim
 com! S source ~/.config/nvim/init.vim
 com! WS w | S
 com! Ws w | S
-com! E Explore
+com! E tabe | Explore
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
