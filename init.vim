@@ -18,8 +18,13 @@ ru machine.vim
 set cinkeys-=0#
 
 " Don't yank on paste, replace, x or s
-xn p "_dP
-xn c "_c
+vn p "_dP
+
+vn c "_c
+vn C "_C
+vn x "_x
+vn s "_s
+
 nn c "_c
 nn C "_C
 nn x "_x
