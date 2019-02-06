@@ -31,7 +31,7 @@ nn x "_x
 nn s "_s
 
 " Disable C/C++ one-line auto-comment and set tabstop
-au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f:// tabstop=2
+au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f://
 
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
