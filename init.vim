@@ -210,6 +210,8 @@ let g:ale_lint_on_insert_leave = 1
 ino <C-c> <Esc><Esc>
 
 " Far
+set lazyredraw
+set regexpengine=1
 au FileType far_vim map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 
