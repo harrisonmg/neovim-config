@@ -14,6 +14,9 @@ filetype plugin indent on
 " By default this is machine.vim in the same dir as init.vim
 ru machine.vim
 
+" Open help in new tab instead of split
+cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
+
 " Don't unindent on #
 set cinkeys-=0#
 
