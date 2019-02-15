@@ -17,6 +17,9 @@ ru machine.vim
 " Don't unindent on #
 set cinkeys-=0#
 
+" Z FOR ONE THING AND ONE THING ONLY
+map z zz
+
 " Don't yank on paste, replace, x or s
 vn p "_dP
 
