@@ -146,6 +146,7 @@ hi normal guibg=NONE ctermbg=NONE
 let g:seoul256_background = 236
 set background=dark
 colo seoul256
+hi EndOfBuffer ctermfg=bg guifg=bg
 hi LineNr ctermbg=NONE
 hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
@@ -202,6 +203,7 @@ else
 endif
 
 " ALE
+let g:ale_sign_column_always = 1
 let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
