@@ -34,7 +34,7 @@ nn x "_x
 nn s "_s
 
 " Disable C/C++ one-line auto-comment and set tabstop
-au FileType h,hpp,c,cpp setlocal comments-=:// comments+=f://
+au FileType h,hpp,c,cpp setl comments-=:// comments+=f:// cc=120
 
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
@@ -54,9 +54,6 @@ com! TrimWhitespace call RemoveTrailingWhitespace()
 " Show tabs
 set list
 set listchars=tab:>-
-
-" Add C++ line length guide
-au FileType cpp,hpp setl cc=120
 
 " Select all
 nm <c-a> ggVG
