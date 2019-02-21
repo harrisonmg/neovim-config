@@ -155,6 +155,8 @@ hi VertSplit ctermbg=NONE cterm=NONE
 set fillchars+=vert:\ 
 
 " FZF
+let g:fzf_windows_jump = 1
+nn <c-i> :Windows<cr>
 fu! GetGitDir()
   let dir = systemlist('git rev-parse --show-toplevel')[0]
   if dir =~? "^fatal: Not a git repository"
