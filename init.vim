@@ -62,7 +62,6 @@ set listchars=tab:>-
 nm <c-a> ggVG
 
 " C++ or CMakeLists file two-space indents
-au FileType cpp,hpp setl tabstop=2
 au BufEnter CMakeLists.txt setl tabstop=2
 
 " Paste mode hotkey
