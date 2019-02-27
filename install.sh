@@ -1,5 +1,6 @@
 #!/bin/bash
 set -o errexit
+cd "${0%/*}"
 
 # install neovim
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -23,12 +24,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # add aliases, fixes, and fzf config
 echo >> ~/.bashrc
-echo -e "# Adios vi" >> ~/.bashrc
-echo -e "alias nv='nvim -p'" >> ~/.bashrc
-echo -e "export EDITOR='nvim'" >> ~/.bashrc
-echo -e "export VTE_VERSION='100'" >> ~/.bashrc
-echo -e "export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'" >> ~/.bashrc
-echo -e "export FZF_CTRL_T_COMMAND=\"$FZF_DEFAULT_COMMAND\"" >> ~/.bashrc
+echo >> ~/.bashrc
+cat bashrc >> ~/.bashrc
 
 # open neovim and install plugins
 nvim -c PlugInstall
