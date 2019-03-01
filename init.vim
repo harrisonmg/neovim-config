@@ -10,10 +10,6 @@ set tabstop=4
 set cursorline
 filetype plugin indent on
 
-" Add support for machine specific dotfile
-" By default this is machine.vim in the same dir as init.vim
-ru machine.vim
-
 " Open help in new tab instead of split
 cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
 
@@ -212,6 +208,7 @@ let g:ale_lint_delay = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 ino <C-c> <Esc><Esc>
+let g:ale_linters = {'c': [], 'cpp': []}
 
 " Far
 set lazyredraw
@@ -295,3 +292,9 @@ vm <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
+
+" Add support for machine specific dotfile
+" By default this is machine.vim in the same dir as init.vim
+" Source at end so that default configurations can be overriden
+ru machine.vim
+
