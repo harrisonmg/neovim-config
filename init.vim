@@ -169,7 +169,6 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 map t <Plug>(easymotion-overwin-f)
 vm t <Plug>(easymotion-bd-f)
-im <c-f> <c-o>f
 hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
@@ -209,7 +208,7 @@ endif
 " Far
 set lazyredraw
 set regexpengine=1
-au FileType far_vim map <buffer> <c-f> :Fardo<cr>:q<cr>
+au FileType far map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 
 fu! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
