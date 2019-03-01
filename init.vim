@@ -174,7 +174,12 @@ hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
 " Lightline
-let g:lightline = { 'colorscheme': 'seoul256' }
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 let g:lightline.winwidth = 1000
 let g:lightline.tab_component_function = {
       \ 'filename': 'lightline#tab#filename',
