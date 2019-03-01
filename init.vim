@@ -133,7 +133,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'w0rp/ale'
 Plug 'vimjas/vim-python-pep8-indent'
 Plug 'brooth/far.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -201,14 +200,6 @@ if has('win32')
 else
     map <c-_> <plug>NERDCommenterToggle
 endif
-
-" ALE
-let g:ale_sign_column_always = 1
-let g:ale_lint_delay = 0
-let g:ale_lint_on_text_changed = 'normal'
-let g:ale_lint_on_insert_leave = 1
-ino <C-c> <Esc><Esc>
-let g:ale_linters = {'c': [], 'cpp': []}
 
 " Far
 set lazyredraw
