@@ -10,8 +10,8 @@ set tabstop=4
 set cursorline
 filetype plugin indent on
 
-" Ctrl-c is Escape
-ino <c-c> <Esc>
+" Ctrl-c as Escape
+" ino <c-c> <Esc>
 
 " Open help in new tab instead of split
 cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
@@ -157,9 +157,9 @@ nn <c-g> :Windows<cr>
 fu! GetGitDir()
   let dir = systemlist('git rev-parse --show-toplevel')[0]
   if dir =~? "^fatal: Not a git repository"
-    return '.'
+    retu '.'
   else
-    return dir
+    retu dir
   endif
 endf
 com! -bang -nargs=? -complete=dir GFiles
@@ -176,10 +176,31 @@ hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
 " Lightline
+fu! LightlineFilepath()
+  let path = ""
+  let subs = reverse(split(expand('%:p'), "/"))
+  let i = 0
+  for s in subs
+    if i == 0
+      let path = s
+      let i += 1
+    elseif i < 4
+      let prev_path = path
+      let path = s . '/' . prev_path
+      let i += 1
+    else
+      break
+    endif
+  endfor
+  retu path
+endf
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ],
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilepath'
       \ }
       \ }
 let g:lightline.winwidth = 1000
@@ -221,7 +242,7 @@ fu! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('>pattern: '.pattern)
   if empty(pattern)
     call far#tools#echo_err('No pattern')
-    return
+    retu
   endif
 
   let replace_with = input('Replace with: ', '', 'customlist,far#FarReplaceComplete')
@@ -255,7 +276,7 @@ fu! ActiveBuffers()
       let paths = add(paths, str[1:-2])
     endif
   endfor
-  return join(paths, ' ')
+  retu join(paths, ' ')
 endf
 
 fu! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "{{{
@@ -265,7 +286,7 @@ fu! FarPromptActiveBuffers(rngmode, rngline1, rngline2, ...) abort range "{{{
   call far#tools#log('>pattern: '.pattern)
   if empty(pattern)
     call far#tools#echo_err('No pattern')
-    return
+    retu
   endif
 
   let replace_with = input('Replace with: ', '', 'customlist,far#FarReplaceComplete')
