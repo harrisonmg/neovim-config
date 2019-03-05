@@ -30,6 +30,7 @@ alias vib='nvim ~/.bashrc'
 alias sb='source ~/.bashrc'
 
 alias cdb='cd -'
+alias cdd='cd ~/dotfiles'
 alias naut='nautilus .'
 
 alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
