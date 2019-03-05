@@ -13,6 +13,16 @@ export FZF_CTRL_T_COMMAND=""
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# CDCDCDC
+function cd_up()
+{
+  cd $(printf "%0.s../" $(seq 1 $1 ));
+}
+alias 'cd.'='cd_up'
+
+# Fix dir bg (WSL)
+LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
+
 # Various aliases
 alias sudo='sudo '
 alias vib='nvim ~/.bashrc'
@@ -21,11 +31,3 @@ alias gits='git status'
 alias cdb='cd -'
 alias naut='nautilus .'
 alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
-
-# CDCDCDC
-function cd_up()
-{
-  cd $(printf "%0.s../" $(seq 1 $1 ));
-}
-alias 'cd.'='cd_up'
-
