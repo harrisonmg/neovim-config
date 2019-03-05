@@ -11,7 +11,7 @@ set cursorline
 filetype plugin indent on
 
 " Ctrl-c as Escape
-" ino <c-c> <Esc>
+ino <c-c> <Esc>
 
 " Open help in new tab instead of split
 cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
