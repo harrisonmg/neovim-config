@@ -25,9 +25,15 @@ LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
 
 # Various aliases
 alias sudo='sudo '
+
 alias vib='nvim ~/.bashrc'
 alias sb='source ~/.bashrc'
-alias gits='git status'
+
 alias cdb='cd -'
 alias naut='nautilus .'
+
 alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
+alias gits='git status'
+alias gitc='git commit'
+alias gitp='git push'
+alias gitd='git diff'
