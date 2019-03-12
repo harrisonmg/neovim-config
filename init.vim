@@ -139,6 +139,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vimjas/vim-python-pep8-indent'
 Plug 'brooth/far.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/renumber.vim'
 call plug#end()
 
 " Seoul256 colorscheme
