@@ -171,8 +171,8 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " EasyMotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-map t <Plug>(easymotion-overwin-f)
-vm t <Plug>(easymotion-bd-f)
+map  t <Plug>(easymotion-bd-f)
+nmap t <Plug>(easymotion-overwin-f)
 hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
