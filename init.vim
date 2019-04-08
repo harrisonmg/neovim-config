@@ -63,8 +63,11 @@ nm <c-a> ggVG
 " C++ or CMakeLists file two-space indents
 au BufEnter CMakeLists.txt setl tabstop=2
 
-" Paste mode hotkey
-set pastetoggle=<F2>
+" Paste mode toggle hotkey
+set pastetoggle=<f2>
+
+" Line number toggle hotkey
+nn <f3> :set invnumber<cr>
 
 " Paste yank in insert and command mode
 map! <c-r> <c-r>"
