@@ -10,6 +10,13 @@ set tabstop=4
 set cursorline
 filetype plugin indent on
 
+" Make it easier to exit Terminal mode
+tno <Esc> <c-\><c-n>
+
+" Disable Ex mode
+map q: <Nop>
+nn Q <nop>
+
 " Ctrl-c as Escape
 ino <c-c> <Esc>
 
