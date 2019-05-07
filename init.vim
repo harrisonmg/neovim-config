@@ -110,9 +110,11 @@ let g:netrw_liststyle = 3
 " Enable XML highlighting for .launch files
 au BufEnter *.launch,*.test setl syntax=xml
 
-" Faster tab switching
+" Faster tab switching and rearranging
 nor <c-l> gt
 nor <c-h> gT
+nor <c-L> :tabm +1<cr>
+nor <c-H> :tabm -1<cr>
 
 " Faster split switching
 map <space> <c-w><c-w>
