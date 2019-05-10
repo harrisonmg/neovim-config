@@ -151,6 +151,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vimjas/vim-python-pep8-indent'
 Plug 'brooth/far.vim'
 Plug 'machakann/vim-highlightedyank'
+Plug 'harrisonmg/vim-hexdec'
 Plug 'vim-scripts/renumber.vim'
 call plug#end()
 
@@ -329,4 +330,3 @@ let g:highlightedyank_highlight_duration = 500
 " By default this is machine.vim in the same dir as init.vim
 " Source at end so that default configurations can be overriden
 ru machine.vim
-
