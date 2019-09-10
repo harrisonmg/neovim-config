@@ -42,8 +42,8 @@ nn C "_C
 nn x "_x
 nn s "_s
 
-" Disable C/C++ one-line auto-comment and set tabstop
-au FileType h,hpp,c,cpp setl comments-=:// comments+=f:// cc=120
+" Disable one-line auto-comment and set tabstop
+au FileType h,hpp,c,cpp,javascript,java setl comments-=:// comments+=f:// cc=120
 
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
