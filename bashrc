@@ -16,12 +16,12 @@ export FZF_CTRL_T_COMMAND=""
 # CDCDCDC
 function cd_up()
 {
-  cd $(printf "%0.s../" $(seq 1 $1 ));
+  cd $(printf "%0.s../" $(seq 1 $1 ))
 }
 alias 'cd.'='cd_up'
 
 # Fix dir bg (WSL)
-LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
+export LS_COLORS=$LS_COLORS:'ow=1;34:'
 
 # Various aliases
 alias sudo='sudo '
