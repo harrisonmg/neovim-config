@@ -29,6 +29,10 @@ set cinkeys-=0#
 " Z FOR ONE THING AND ONE THING ONLY
 map z zz
 
+" Center on next / prev search result
+nm n nz
+nm N Nz
+
 " Don't yank on paste, replace, x or s
 vn p "_dP
 
