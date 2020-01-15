@@ -46,7 +46,7 @@ nn C "_C
 nn x "_x
 nn s "_s
 
-" Disable one-line auto-comment and set tabstop
+" Disable one-line auto-comment
 au FileType h,hpp,c,cpp,javascript,java setl comments-=:// comments+=f:// cc=120
 
 " Show trailing whitepace and spaces before a tab
