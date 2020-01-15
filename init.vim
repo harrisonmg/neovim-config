@@ -47,7 +47,7 @@ nn x "_x
 nn s "_s
 
 " Disable one-line auto-comment
-au FileType h,hpp,c,cpp,javascript,java setl comments-=:// comments+=f:// cc=120
+au filetype h,hpp,c,cpp,javascript,java setl comments-=:// comments+=f:// cc=120
 
 " Show trailing whitepace and spaces before a tab
 hi link ExtraWhitespace ErrorMsg
@@ -130,7 +130,7 @@ im <c-k> <Up>
 im <c-l> <Right>
 
 " Fix YAML and vim autospacing
-au FileType yaml,vim setl ts=2 sts=2 sw=2 expandtab
+au filetype yaml,vim setl ts=2 sts=2 sw=2 expandtab
 
 " Some fun command maps
 com! W w
@@ -250,7 +250,7 @@ endif
 " Far
 set lazyredraw
 set regexpengine=1
-au FileType far map <buffer> <c-f> :Fardo<cr>:q<cr>
+au filetype far map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 
 fu! FarPromptBuffer(rngmode, rngline1, rngline2, ...) abort range "{{{
