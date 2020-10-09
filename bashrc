@@ -30,8 +30,9 @@ alias vib='nvim ~/.bashrc'
 alias sb='source ~/.bashrc'
 
 alias cdb='cd -'
-alias cdd='cd ~/dotfiles'
+alias cddf='cd ~/dotfiles'
 alias naut='nautilus .'
+alias exp='explorer.exe .'
 
 alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
 alias gits='git status'
@@ -40,3 +41,8 @@ alias gitp='git pull'
 alias gitd='git diff'
 alias gitl='git log'
 alias gita='git add . && git commit && git push'
+
+alias p3='python3'
+alias gdb='gdb -tui'
+
+export DISPLAY=:0
