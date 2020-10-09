@@ -3,9 +3,16 @@ set -o errexit
 cd "${0%/*}"
 
 # install neovim
-sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
+
+sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+sudo update-alternatives --config vi
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo update-alternatives --config vim
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+sudo update-alternatives --config editor
 
 # install fd for fzf
 wget --no-check-certificate https://github.com/sharkdp/fd/releases/download/v7.0.0/fd_7.0.0_amd64.deb

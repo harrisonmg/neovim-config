@@ -29,10 +29,6 @@ set cinkeys-=0#
 " Z FOR ONE THING AND ONE THING ONLY
 map z zz
 
-" Center on next / prev search result
-nm n nz
-nm N Nz
-
 " Don't yank on paste, replace, x or s
 vn p "_dP
 
@@ -63,6 +59,18 @@ fu! RemoveTrailingWhitespace()
   ''
 endf
 com! TrimWhitespace call RemoveTrailingWhitespace()
+
+" Trim and save
+nm <c-s> :TrimWhitespace<cr>:w<cr>
+
+" Close buffer
+nm <c-w> :q<cr>
+
+" Fucking freak
+nm <c-m-w> :q!<cr>
+
+" Faster split switching
+nn <space> <c-w><c-w>
 
 " Show tabs
 set list
@@ -120,9 +128,6 @@ nor <c-h> gT
 nor <c-m-l> :tabm +1<cr>
 nor <c-m-h> :tabm -1<cr>
 
-" Faster split switching
-map <space> <c-w><c-w>
-
 " Enable insert mode arrows
 im <c-h> <Left>
 im <c-j> <Down>
@@ -149,7 +154,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vimjas/vim-python-pep8-indent'
@@ -157,6 +161,7 @@ Plug 'brooth/far.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'harrisonmg/vim-hexdec'
 Plug 'vim-scripts/renumber.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " Seoul256 colorscheme
@@ -167,7 +172,7 @@ colo seoul256
 hi EndOfBuffer ctermfg=bg guifg=bg
 hi LineNr ctermbg=NONE
 hi VertSplit ctermbg=NONE cterm=NONE
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 " FZF
 let g:fzf_windows_jump = 1
@@ -189,7 +194,6 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 map  t <Plug>(easymotion-bd-f)
-nmap t <Plug>(easymotion-overwin-f)
 hi link EasyMotionTarget Exception
 hi link EasyMotionIncCursor Search
 
