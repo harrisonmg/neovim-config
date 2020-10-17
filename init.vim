@@ -10,6 +10,9 @@ set tabstop=4
 set cursorline
 filetype plugin indent on
 
+" Copy visual selection to clipboard (WSL)
+vn <c-y> :w !clip.exe<cr><cr>
+
 " Make it easier to exit Terminal mode
 tno <Esc> <c-\><c-n>
 
