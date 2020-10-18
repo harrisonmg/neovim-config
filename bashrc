@@ -31,6 +31,7 @@ alias sb='source ~/.bashrc'
 
 alias cdb='cd -'
 alias cddf='cd ~/dotfiles'
+alias cddl='cd /mnt/c/Users/Harrison/Downloads'
 alias naut='nautilus .'
 alias exp='explorer.exe .'
 
