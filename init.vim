@@ -10,6 +10,9 @@ set tabstop=4
 set cursorline
 filetype plugin indent on
 
+" New tab
+nn <c-t> :tabe<cr>
+
 " Copy visual selection to clipboard (WSL)
 vn <c-y> :w !clip.exe<cr><cr>
 
