@@ -1,6 +1,8 @@
 * programs
     * ninite
         * chrome
+            * sign in
+            * checker plus
         * 7zip
         * everything
         * windirstat
