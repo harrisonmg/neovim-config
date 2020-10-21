@@ -1,0 +1,20 @@
+* programs
+    * ninite
+        * chrome
+        * 7zip
+        * everything
+        * windirstat
+        * spotify
+    * slack
+    * wsl
+    * terminal
+    # anaconda
+* settings
+    * jetbrains mono
+    * show file extensions and hidden files
+    * remove recycle bin
+    * taskbar
+* wsl
+    * dotfiles
+        * install
+        * settings.json

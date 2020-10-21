@@ -3,7 +3,7 @@ set -o errexit
 cd "${0%/*}"
 
 # install neovim
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
