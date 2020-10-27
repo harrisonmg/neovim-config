@@ -62,8 +62,7 @@
     [
         { "command": "find", "keys": "ctrl+shift+f" },
         { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "ctrl+alt+n" },
-    { "command": { "action": "closePane" }, "keys": "ctrl+alt+d" },
-    { "command": { "action": "closeTab" }, "keys": "ctrl+alt+w" },
+        { "command": { "action": "closePane" }, "keys": "ctrl+alt+d" },
         { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+j" },
         { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+h" },
         { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+l" },
