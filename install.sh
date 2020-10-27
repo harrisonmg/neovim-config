@@ -7,17 +7,10 @@ sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
 
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-sudo update-alternatives --config editor
-
-# install fd for fzf
-wget --no-check-certificate https://github.com/sharkdp/fd/releases/download/v7.0.0/fd_7.0.0_amd64.deb
-sudo dpkg -i fd_7.0.0_amd64.deb
-rm fd_7.0.0_amd64.deb
+# install ripgrep for fzf and far
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
+sudo dpkg -i ripgrep_12.1.1_amd64.deb
+rm ripgrep_12.1.1_amd64.deb
 
 # perform initial unpack
 mkdir -p ~/.config/nvim/

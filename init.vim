@@ -179,10 +179,11 @@ colo seoul256
 hi EndOfBuffer ctermfg=bg guifg=bg
 hi LineNr ctermbg=NONE
 hi VertSplit ctermbg=NONE cterm=NONE
-set fillchars+=vert:\
+set fillchars+=vert:\  " <- don't delete that whitespace!
 
 " FZF
-let g:fzf_windows_jump = 1
+let g:fzf_buffers_jump = 1
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 nn <c-g> :Windows<cr>
 fu! GetGitDir()
   let dir = systemlist('git rev-parse --show-toplevel')[0]
@@ -192,9 +193,8 @@ fu! GetGitDir()
     retu dir
   endif
 endf
-com! -bang -nargs=? -complete=dir GFiles
-  \ call fzf#vim#files(GetGitDir(), <bang>0)
-nn <c-p> :GFiles --exclude .pyc<cr>
+let g:current_git_dir = GetGitDir()
+nn <c-p> :Files <c-r>=g:current_git_dir<cr><cr>
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " EasyMotion
@@ -258,9 +258,8 @@ else
     map <c-_> <plug>NERDCommenterToggle
 endif
 
-" Far
-set lazyredraw
-set regexpengine=1
+" FAR
+let g:far#source = 'rgnvim'
 au filetype far map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 

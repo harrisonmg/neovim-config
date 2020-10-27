@@ -8,7 +8,7 @@ export PS1="\[\033[35m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\]$ \[\e[m\]
 alias nv='nvim -p'
 export EDITOR='nvim'
 export VTE_VERSION='100'
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND=""
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
