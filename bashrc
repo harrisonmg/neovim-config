@@ -50,7 +50,7 @@ alias gitc='git commit'
 alias gitp='git pull'
 alias gitd='git diff'
 alias gitl='git log'
-alias gita='git add . && git commit && git push'
+alias gita='cd $(git rev-parse --show-toplevel) && git add . && git commit && git push; cd -'
 
 alias p3='python3'
 alias gdb='gdb -tui'
