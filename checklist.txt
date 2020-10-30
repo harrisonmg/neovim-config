@@ -10,12 +10,14 @@
     * wsl
     * terminal
     * anaconda
+        * add to PATH
 * settings
-    * sync
+    * windows sync
     * jetbrains mono
     * show file extensions and hidden files
     * hide recycle bin
     * taskbar
-* wsl
+* wsl (as admin)
     * dotfiles
         * install
+        * Set-ExecutionPolicy -ExecutionPolicy Unrestricted
