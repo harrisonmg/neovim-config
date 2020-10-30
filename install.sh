@@ -13,19 +13,23 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_
 sudo dpkg -i ripgrep_12.1.1_amd64.deb
 rm ripgrep_12.1.1_amd64.deb
 
-# perform initial unpack
-mkdir -p ~/.config/nvim/
+# add aliases, fixes, and fzf config
+echo >> ~/.bashrc
+echo "# custom config" >> ~/.bashrc
+echo source ~/dotfiles/bashrc >> ~/.bashrc
+
+# unpack terminal settings
 ./unpack.sh
+
+# neovim config
+mkdir -p ~/.config/nvim/
+echo "\" Refer to version controller configuration" >> ~/.config/nvim/init.vim
+echo "so ~/dotfiles/init.vim" >> ~/.config/nvim/init.vim
 echo -e "\" Dotfile for machine specific configurations\n" >> ~/.config/nvim/machine.vim
 
 # install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# add aliases, fixes, and fzf config
-echo >> ~/.bashrc
-echo "# custom config" >> ~/.bashrc
-echo source ~/dotfiles/bashrc >> ~/.bashrc
 
 # open neovim and install plugins
 nvim -c PlugInstall

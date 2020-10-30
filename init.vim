@@ -148,7 +148,7 @@ com! W w
 com! Q q
 com! Wq wq
 com! WQ wq
-com! V tabe ~/.config/nvim/init.vim
+com! V tabe ~/dotfiles/init.vim
 com! M tabe ~/.config/nvim/machine.vim
 com! S source ~/.config/nvim/init.vim
 com! WS w | S
@@ -341,6 +341,5 @@ vm <c-b> :FarpABuf<cr>
 let g:highlightedyank_highlight_duration = 500
 
 " Add support for machine specific dotfile
-" By default this is machine.vim in the same dir as init.vim
 " Source at end so that default configurations can be overriden
-ru machine.vim
+so ~/.config/nvim/machine.vim
