@@ -35,7 +35,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # Various aliases
 alias sudo='sudo '
 
-alias vib='nvim ~/.bashrc'
+alias vib='nvim ~/dotfiles/bashrc'
 alias sb='source ~/.bashrc'
 
 alias cdb='cd -'

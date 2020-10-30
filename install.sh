@@ -3,11 +3,12 @@ set -o errexit
 cd "${0%/*}"
 
 # install neovim
-sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/stable -y
 sudo apt-get update
-sudo apt-get install neovim
+sudo apt-get install neovim -y
 
 # install ripgrep for fzf and far
+sudo apt-get install curl -y
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
 sudo dpkg -i ripgrep_12.1.1_amd64.deb
 rm ripgrep_12.1.1_amd64.deb
@@ -18,14 +19,13 @@ mkdir -p ~/.config/nvim/
 echo -e "\" Dotfile for machine specific configurations\n" >> ~/.config/nvim/machine.vim
 
 # install vim-plug
-sudo apt-get install curl
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # add aliases, fixes, and fzf config
 echo >> ~/.bashrc
-echo >> ~/.bashrc
-cat bashrc >> ~/.bashrc
+echo "# custom config" >> ~/.bashrc
+echo source ~/dotfiles/bashrc >> ~/.bashrc
 
 # open neovim and install plugins
 nvim -c PlugInstall
