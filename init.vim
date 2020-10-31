@@ -169,6 +169,7 @@ Plug 'harrisonmg/vim-hexdec'
 Plug 'vim-scripts/renumber.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'nessss/vim-gml'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Seoul256 colorscheme
