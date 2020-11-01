@@ -10,13 +10,13 @@
     * slack
     * wsl
     * terminal
-    # anaconda
+    * anaconda
 * settings
+    * sync
     * jetbrains mono
     * show file extensions and hidden files
-    * remove recycle bin
+    * hide recycle bin
     * taskbar
 * wsl
     * dotfiles
         * install
-        * settings.json
