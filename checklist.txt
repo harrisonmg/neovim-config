@@ -1,12 +1,11 @@
 * programs
     * ninite
+        * firefox
+            * checker plus
         * 7zip
         * everything
         * windirstat
         * spotify
-    * edge
-        * sync
-        * checker plus
     * slack
     * wsl
     * terminal
