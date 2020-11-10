@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Prompt
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -41,6 +43,7 @@ alias sb='source ~/.bashrc'
 alias cdb='cd -'
 alias cddf='cd ~/dotfiles'
 alias cddl='cd /mnt/c/Users/Harrison/Downloads'
+alias cddc='cd /mnt/c/Users/Harrison/Documents'
 alias naut='nautilus .'
 alias exp='explorer.exe .'
 
@@ -50,9 +53,10 @@ alias gitc='git commit'
 alias gitp='git pull'
 alias gitd='git diff'
 alias gitl='git log'
-alias gita='cd $(git rev-parse --show-toplevel) && git add . && git commit && git push; cd -'
+alias gita='cd "$(git rev-parse --show-toplevel)" && git add . && git commit && git push; cd -'
 
 alias p3='python3'
 alias gdb='gdb -tui'
 
-export DISPLAY=:0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export LIBGL_ALWAYS_INDIRECT=1
