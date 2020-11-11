@@ -8,6 +8,7 @@ set expandtab
 set shiftwidth=0
 set tabstop=4
 set cursorline
+set linebreak
 filetype plugin indent on
 
 " New tab
