@@ -13,7 +13,9 @@ export VTE_VERSION='100'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND=""
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [[ ! "$PATH" == */home/harrison/.fzf/bin* ]]; then
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi
 
 # CDCDCDC
 function cd_up()
