@@ -9,16 +9,17 @@ set shiftwidth=0
 set tabstop=4
 set cursorline
 set linebreak
+set mouse=a
 filetype plugin indent on
+
+" Save
+nn <c-s> :w<cr>
 
 " New tab
 nn <c-t> :tabe<cr>
 
 " Copy visual selection to clipboard (WSL)
 vn <c-y> :w !clip.exe<cr><cr>
-
-" Make it easier to exit Terminal mode
-tno <Esc> <c-\><c-n>
 
 " Disable Ex mode
 map q: <Nop>
@@ -59,16 +60,6 @@ au BufWinEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
-
-" Removes trailing spaces
-fu! RemoveTrailingWhitespace()
-  %s/\s*$//
-  ''
-endf
-com! TrimWhitespace call RemoveTrailingWhitespace()
-
-" Trim and save
-nm <c-s> :TrimWhitespace<cr>:w<cr>
 
 " Close buffer
 nm <c-w> :q<cr>
@@ -171,6 +162,7 @@ Plug 'vim-scripts/renumber.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'nessss/vim-gml'
 Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Seoul256 colorscheme
@@ -341,6 +333,19 @@ vm <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
+
+" ALE
+let g:ale_sign_column_always = 1
+let g:ale_lint_delay = 0
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = {'python': ['flake8']}
+  let g:ale_python_flake8_options = '--max-line-length 100'
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'python': ['autopep8']}
+nm <c-m-n> <Plug>(ale_next_wrap)
+nm <c-m-p> <Plug>(ale_previous_wrap)
 
 " Add support for machine specific dotfile
 " Source at end so that default configurations can be overriden
