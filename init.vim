@@ -12,6 +12,14 @@ set linebreak
 set mouse=a
 filetype plugin indent on
 
+" Disable mouse clicks
+:nm <LeftMouse> <nop>
+:im <LeftMouse> <nop>
+:vm <LeftMouse> <nop>
+:nm <RightMouse> <nop>
+:im <RightMouse> <nop>
+:vm <RightMouse> <nop>
+
 " Save
 nn <c-s> :w<cr>
 
@@ -154,7 +162,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'vimjas/vim-python-pep8-indent'
 Plug 'brooth/far.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'harrisonmg/vim-hexdec'
@@ -345,7 +352,7 @@ let g:ale_fix_on_save = 0
 let g:ale_linters = {'python': ['flake8']}
 let g:ale_python_flake8_options = '--max-line-length 100'
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'python': ['autopep8']}
+      \ 'python': ['autopep8', 'remove_trailing_lines', 'trim_whitespace']}
 let g:ale_python_autopep8_options = '--max-line-length 100'
 nm <c-m-n> <Plug>(ale_next_wrap)
 nm <c-m-p> <Plug>(ale_previous_wrap)
