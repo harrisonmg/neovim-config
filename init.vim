@@ -3,6 +3,7 @@ set noshowmode
 set number
 set ruler
 set ignorecase
+set smartcase
 set encoding=utf8
 set expandtab
 set shiftwidth=0
@@ -170,6 +171,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nessss/vim-gml'
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'Shougo/echodoc.vim'
 call plug#end()
 
 " Seoul256 colorscheme
@@ -357,6 +361,20 @@ let g:ale_python_autopep8_options = '--max-line-length 100'
 nm <c-m-n> <Plug>(ale_next_wrap)
 nm <c-m-p> <Plug>(ale_previous_wrap)
 nm <c-m-f> <Plug>(ale_fix)
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
+"ino <expr><C-n> pumvisible() ? "\<C-n>" :
+      "\ <SID>check_back_space() ? "\<TAB>" :
+      "\ deoplete#manual_complete()
+"function! s:check_back_space() abort "{{{
+  "let col = col('.') - 1
+  "return !col || getline('.')[col - 1]  =~ '\s'
+"endfunction"}}}
+
+" Echodoc
+let g:echodoc#enable_at_startup = 1
 
 " Add support for machine specific dotfile
 " Source at end so that default configurations can be overriden

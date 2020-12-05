@@ -32,7 +32,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install flake8
-python3 -m pip install flake8 autopep8
+python3 -m pip install flake8 autopep8 jedi
 
 # open neovim and install plugins
 nvim -c PlugInstall
