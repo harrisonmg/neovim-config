@@ -4,11 +4,11 @@ cd "${0%/*}"
 
 # install neovim
 sudo add-apt-repository ppa:neovim-ppa/stable -y
-sudo apt-get update
-sudo apt-get install neovim -y
+sudo apt update
+sudo apt install neovim -y
 
 # install ripgrep for fzf and far
-sudo apt-get install curl -y
+sudo apt install curl -y
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
 sudo dpkg -i ripgrep_12.1.1_amd64.deb
 rm ripgrep_12.1.1_amd64.deb
@@ -31,8 +31,17 @@ echo -e "\" Dotfile for machine specific configurations\n" >> ~/.config/nvim/mac
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# install flake8
-python3 -m pip install flake8 autopep8 jedi
+# install linter and stuff
+python3 -m pip install neovim-remote flake8 autopep8  # jedi
 
 # open neovim and install plugins
 nvim -c PlugInstall
+
+# install YCM deps
+sudo apt install build-essential cmake vim-nox python3-dev \
+    mono-complete golang nodejs default-jdk npm gcc-8
+sudo update-binfmts --disable cli
+
+# build YCM
+cd ~/.local/share/nvim/plugged/YouCompleteMe/
+CXX=$(which gcc-8) ./install.py --all

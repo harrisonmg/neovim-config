@@ -7,7 +7,7 @@ parse_git_branch() {
 export PS1="\[\033[35m\]\w\[\033[34m\]\$(parse_git_branch)\[\033[00m\]$ \[\e[m\]"
 
 # Adios vi
-alias nv='nvim -p'
+alias nv='NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim -p'
 export EDITOR='nvim'
 export VTE_VERSION='100'
 export FZF_DEFAULT_COMMAND='rg --files'
