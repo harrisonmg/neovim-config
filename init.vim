@@ -2,8 +2,6 @@
 set noshowmode
 set number
 set ruler
-set ignorecase
-set smartcase
 set encoding=utf8
 set expandtab
 set shiftwidth=0
