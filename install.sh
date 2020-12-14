@@ -39,7 +39,7 @@ nvim -c PlugInstall
 
 # install YCM deps
 sudo apt install build-essential cmake vim-nox python3-dev \
-    mono-complete golang nodejs default-jdk npm gcc-8
+    mono-complete golang nodejs default-jdk npm g++-8
 sudo update-binfmts --disable cli
 
 # build YCM
