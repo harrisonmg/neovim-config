@@ -32,6 +32,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install linter and stuff
+sudo apt install python3-pip -y
 python3 -m pip install neovim-remote flake8 autopep8  # jedi
 
 # open neovim and install plugins
@@ -39,7 +40,7 @@ nvim -c PlugInstall
 
 # install YCM deps
 sudo apt install build-essential cmake vim-nox python3-dev \
-    mono-complete golang nodejs default-jdk npm g++-8
+    mono-complete golang nodejs default-jdk npm g++-8 -y
 sudo update-binfmts --disable cli
 
 # build YCM
