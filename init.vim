@@ -9,6 +9,7 @@ set tabstop=4
 set cursorline
 set linebreak
 set mouse=a
+set visualbell
 filetype plugin indent on
 
 " Disable mouse clicks
