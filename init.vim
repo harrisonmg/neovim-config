@@ -10,6 +10,7 @@ set cursorline
 set linebreak
 set mouse=a
 set visualbell
+set inccommand=nosplit
 filetype plugin indent on
 
 " Disable mouse clicks
@@ -262,7 +263,7 @@ else
 endif
 
 " FAR
-let g:far#source = 'rg'
+let g:far#source = 'vimgrep'
 au filetype far map <buffer> <c-f> :Fardo<cr>:q<cr>
 let g:far#auto_write_replaced_buffers = 0
 
