@@ -53,7 +53,7 @@ alias exp='explorer.exe .'
 alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
 alias gits='git status'
 alias gitc='git commit'
-alias gitp='git stash && git pull && git stash pop'
+alias gitp='git stash && git pull --rebase && git stash pop'
 alias gitd='git diff'
 alias gitl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gita='cd "$(git rev-parse --show-toplevel)" && git add . && git commit && git push; cd -'
