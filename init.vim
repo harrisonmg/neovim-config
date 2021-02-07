@@ -11,6 +11,7 @@ set linebreak
 set mouse=a
 set visualbell
 set inccommand=nosplit
+set signcolumn=yes:1
 filetype plugin indent on
 
 " Disable mouse clicks
