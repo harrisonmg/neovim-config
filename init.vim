@@ -360,8 +360,7 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 0
-let g:ale_linters = {'python': ['flake8'],
-                   \ 'cs': []}
+let g:ale_linters = {'python': ['flake8'], 'cs': []}
 let g:ale_python_flake8_options = '--max-line-length 100'
 let g:ale_fixers = {'*': ['uncrustify', 'remove_trailing_lines', 'trim_whitespace'],
                   \ 'python': ['autopep8', 'remove_trailing_lines', 'trim_whitespace']}
@@ -375,6 +374,7 @@ let g:echodoc#enable_at_startup = 1
 
 " YouCompleteMe
 set completeopt-=preview
+let g:ycm_filetype_blacklist = {'c': 1, 'cpp': 1, 'h': 1, 'hpp': 1}
 
 " Add support for machine specific dotfile
 " Source at end so that default configurations can be overriden
