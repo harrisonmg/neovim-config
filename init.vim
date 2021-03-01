@@ -60,6 +60,10 @@ nn C "_C
 nn x "_x
 nn s "_s
 
+" Yankless D
+nn <m-D> "_D
+nn <m-d> "_d
+
 " Disable one-line auto-comment
 au filetype h,hpp,c,cpp,javascript,java setl comments-=:// comments+=f:// cc=120
 
