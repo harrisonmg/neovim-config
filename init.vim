@@ -60,7 +60,7 @@ nn C "_C
 nn x "_x
 nn s "_s
 
-" Yankless D
+" Yankless d
 nn <m-D> "_D
 nn <m-d> "_d
 
