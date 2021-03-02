@@ -374,6 +374,7 @@ let g:echodoc#enable_at_startup = 1
 
 " YouCompleteMe
 set completeopt-=preview
+let g:ycm_extra_conf_globlist = ['!*']
 
 " Add support for machine specific dotfile
 " Source at end so that default configurations can be overriden
