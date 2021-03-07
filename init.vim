@@ -81,10 +81,8 @@ nm <c-w> :q<cr>
 " Fucking freak
 nm <c-m-w> :q!<cr>
 
-" Rotate splits
-nn <c-m-r> <c-w><c-r>
-
-" Faster split switching
+" Some split shortcuts
+nn <c-m-r> <c-w>
 nn <space> <c-w><c-w>
 
 " Show tabs
