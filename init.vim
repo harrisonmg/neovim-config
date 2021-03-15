@@ -374,7 +374,7 @@ let g:echodoc#enable_at_startup = 1
 
 " YouCompleteMe
 set completeopt-=preview
-let g:ycm_extra_conf_globlist = ['!*']
+let g:ycm_extra_conf_globlist = ['!/*']
 nm <c-m> :YcmCompleter GoTo<cr>
 vm <c-m> :YcmCompleter GoTo<cr>
 nm <c-m-m> :tab split<cr>:YcmCompleter GoTo<cr>
