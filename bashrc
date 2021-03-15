@@ -20,7 +20,7 @@ stty -ixon
 # CDCDCDC
 function cd_up()
 {
-  cd "$(printf "%0.s../" $(seq 1 "$1" ))" || return
+  cd "$(printf "%0.s../" $(seq 1 "${1:-1}" ))" || return
 }
 alias 'cd.'='cd_up'
 
