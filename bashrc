@@ -20,7 +20,7 @@ stty -ixon
 # CDCDCDC
 function cd_up()
 {
-  cd $(printf "%0.s../" $(seq 1 $1 ))
+  cd "$(printf "%0.s../" $(seq 1 "$1" ))" || return
 }
 alias 'cd.'='cd_up'
 
@@ -50,7 +50,7 @@ alias cddc='cd /mnt/c/Users/Harrison/Documents'
 alias naut='nautilus .'
 alias exp='explorer.exe .'
 
-alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print $1}' | xargs git branch -D; }"
+alias prune-branches="git pull; git remote prune origin; { git branch -vv | grep ' gone]' | awk '{print \$\1}' | xargs git branch -D; }"
 alias gits='git status'
 alias gitc='git commit'
 alias gitp='git stash && git pull --rebase && git submodule update && git stash pop'
@@ -61,5 +61,6 @@ alias gita='cd "$(git rev-parse --show-toplevel)" && git add . && git commit && 
 alias p3='python3'
 alias gdb='gdb -tui'
 
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export DISPLAY
 export LIBGL_ALWAYS_INDIRECT=1
