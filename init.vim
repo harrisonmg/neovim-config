@@ -11,7 +11,7 @@ set linebreak
 set mouse=a
 set visualbell
 set inccommand=nosplit
-set signcolumn=yes:1
+set signcolumn=number
 set ignorecase
 set smartcase
 filetype plugin indent on
@@ -179,8 +179,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nessss/vim-gml'
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
-Plug 'Shougo/echodoc.vim'
-Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Seoul256 colorscheme
@@ -351,35 +349,6 @@ vm <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
-
-" ALE
-let g:ale_sign_column_always = 1
-let g:ale_lint_delay = 0
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 0
-let g:ale_linters = {'python': ['flake8'], 'cs': [], 'c': [], 'cpp': []}
-let g:ale_python_flake8_options = '--max-line-length 100'
-let g:ale_fixers = {'*': ['uncrustify', 'remove_trailing_lines', 'trim_whitespace'],
-                  \ 'python': ['autopep8', 'remove_trailing_lines', 'trim_whitespace']}
-let g:ale_python_autopep8_options = '--max-line-length 100'
-nm <c-m-n> <Plug>(ale_next_wrap)
-nm <c-m-p> <Plug>(ale_previous_wrap)
-nm <c-m-f> <Plug>(ale_fix)
-
-" Echodoc
-let g:echodoc#enable_at_startup = 1
-
-" YouCompleteMe
-set completeopt-=preview
-let g:ycm_extra_conf_globlist = ['!/*']
-nm <c-m> :YcmCompleter GoTo<cr>
-vm <c-m> :YcmCompleter GoTo<cr>
-nm <c-m-m> :tab split<cr>:YcmCompleter GoTo<cr>
-nm <c-m-d> :YcmCompleter GetDoc<cr>
-vm <c-m-d> :YcmCompleter GetDoc<cr>
 
 " Add support for machine specific dotfile
 " Source at end so that default configurations can be overriden

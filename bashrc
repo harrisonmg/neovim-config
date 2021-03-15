@@ -13,6 +13,10 @@ export EDITOR='nvim'
 export VTE_VERSION='100'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND=""
+function vs()
+{
+  code "${1:-.}"
+}
 
 # I ain't need this
 stty -ixon
