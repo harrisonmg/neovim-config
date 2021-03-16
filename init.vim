@@ -17,18 +17,13 @@ set smartcase
 filetype plugin indent on
 
 " Disable mouse clicks
-:nm <LeftMouse> <nop>
-:im <LeftMouse> <nop>
-:vm <LeftMouse> <nop>
-:nm <RightMouse> <nop>
-:im <RightMouse> <nop>
-:vm <RightMouse> <nop>
+:map <LeftMouse> <nop>
+:lm  <LeftMouse> <nop>
+:map <RightMouse> <nop>
+:lm  <RightMouse> <nop>
 
 " Save
 nn <c-s> :w<cr>
-
-" New tab
-nn <c-t> :tabe<cr>
 
 " Copy visual selection to clipboard (WSL)
 vn <c-y> :w !clip.exe<cr><cr>
@@ -52,15 +47,10 @@ map z zz
 " Don't yank on paste, replace, x or s
 vn p "_dP
 
-vn c "_c
-vn C "_C
-vn x "_x
-vn s "_s
-
-nn c "_c
-nn C "_C
-nn x "_x
-nn s "_s
+no c "_c
+no C "_C
+no x "_x
+no s "_s
 
 " Yankless d
 nn <m-D> "_D
@@ -92,7 +82,7 @@ set list
 set listchars=tab:>-
 
 " Select all
-nm <c-a> ggVG
+map <c-a> ggVG
 
 " C++ or CMakeLists file two-space indents
 au BufEnter CMakeLists.txt setl tabstop=2
@@ -300,8 +290,7 @@ com! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpBuf
   \ call FarPromptBuffer(<count>,<line1>,<line2>,<f-args>)
 "}}}
 
-nm <c-f> :FarpBuf<cr>
-vm <c-f> :FarpBuf<cr>
+map <c-f> :FarpBuf<cr>
 
 fu! ActiveBuffers()
   redir => bufs
@@ -344,8 +333,7 @@ com! -complete=customlist,far#FarArgsComplete -nargs=* -range=-1 FarpABuf
   \ call FarPromptActiveBuffers(<count>,<line1>,<line2>,<f-args>)
 "}}}
 
-nm <c-b> :FarpABuf<cr>
-vm <c-b> :FarpABuf<cr>
+map <c-b> :FarpABuf<cr>
 
 " Highlighted Yank
 let g:highlightedyank_highlight_duration = 500
