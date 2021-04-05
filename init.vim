@@ -152,6 +152,14 @@ if !exists('g:vscode')
   com! WS w | S
   com! Ws w | S
   com! E tabe | Explore
+
+  " Use persistent history.
+  if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+  en
+  set undodir=/tmp/.vim-undo-dir
+  set undofile
+  set noswapfile
 en
 
 " Plugins
@@ -259,9 +267,9 @@ if !exists('g:vscode')
   let g:NERDAltDelims_hpp = 1
   let g:NERDAltDelims_asm = 1
   if has('win32')
-      map <c-/> <plug>NERDCommenterToggle
+    map <c-/> <plug>NERDCommenterToggle
   else
-      map <c-_> <plug>NERDCommenterToggle
+    map <c-_> <plug>NERDCommenterToggle
   endif
 
   " FAR
