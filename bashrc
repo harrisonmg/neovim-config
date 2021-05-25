@@ -61,6 +61,7 @@ alias gitp='git stash && git pull --rebase && git submodule update && git stash 
 alias gitd='git diff'
 alias gitl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gita='cd "$(git rev-parse --show-toplevel)" && git add . && git commit && git push; cd -'
+alias gitk='git checkout'
 
 alias p3='python3'
 alias gdb='gdb -tui'
