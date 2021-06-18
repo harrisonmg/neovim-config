@@ -63,6 +63,7 @@ alias gitl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 alias gita='cd "$(git rev-parse --show-toplevel)" && git add . && git commit && git push; cd -'
 alias gitk='git checkout'
 alias gitb='git branch'
+alias gitpm='git checkout master && git pull && git checkout -'
 
 alias p3='python3'
 alias gdb='gdb -tui'
