@@ -33,7 +33,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # install linter and stuff
 sudo apt install python3-pip -y
-python3 -m pip install neovim-remote flake8 autopep8
+python3 -m pip install flake8 autopep8
 
 # open neovim and install plugins
 nvim -c PlugInstall

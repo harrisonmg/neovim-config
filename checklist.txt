@@ -1,23 +1,20 @@
 * programs
     * ninite
-        * firefox
-            * checker plus
-        * 7zip
-        * everything
+        * chrome
         * windirstat
         * spotify
+        * 7-zip
+        * vscode
+        * everything
     * slack
-    * wsl
+    * wsl 2
     * terminal
-    * anaconda
-        * add to PATH
 * settings
-    * windows sync
     * jetbrains mono
     * show file extensions and hidden files
     * hide recycle bin
-    * taskbar
+    * clear start menu and taskbar
 * wsl (as admin)
     * dotfiles
-        * install
+        * ./install
         * Set-ExecutionPolicy -ExecutionPolicy Unrestricted
